@@ -8,26 +8,26 @@ import {
   Put,
 } from '@nestjs/common';
 import { PalestraService } from '../services/palestra.service';
-import { IPalestra } from '../domain/palestra';
+import {Palestra} from "../domain/palestra.entity";
 
 @Controller('/palestras')
 export class PalestraController {
   constructor(private readonly palestraService: PalestraService) {}
 
   @Get()
-  getPalestras(): Promise<IPalestra[]> {
+  getPalestras(): Promise<Palestra[]> {
     console.log('Requisicao para retornar todas as palestras');
     return this.palestraService.getAll();
   }
 
   @Get(':id')
-  getPalestra(@Param('id') id: string): Promise<IPalestra> {
+  getPalestra(@Param('id') id: string): Promise<Palestra> {
     console.log(`Requisicao para retornar palestra ${id}`);
     return this.palestraService.get(id);
   }
 
   @Post()
-  createPalestra(@Body() palestra: IPalestra): Promise<IPalestra> {
+  createPalestra(@Body() palestra: Palestra): Promise<Palestra> {
     console.log('Requisicao para criar uma palestra');
     return this.palestraService.create(palestra);
   }
@@ -35,8 +35,8 @@ export class PalestraController {
   @Put(':id')
   updatePalestra(
     @Param('id') id: string,
-    @Body() palestra: IPalestra,
-  ): Promise<IPalestra> {
+    @Body() palestra: Palestra,
+  ): Promise<Palestra> {
     return this.palestraService.update(id, palestra);
   }
 
