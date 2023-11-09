@@ -8,7 +8,7 @@ import {
   Put,
 } from '@nestjs/common';
 import { PalestraService } from '../services/palestra.service';
-import {Palestra} from "../domain/palestra.entity";
+import { Palestra } from '../domain/palestra.entity';
 
 @Controller('/palestras')
 export class PalestraController {

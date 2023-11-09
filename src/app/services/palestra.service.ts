@@ -27,6 +27,7 @@ export class PalestraService {
     });
     existingPalestra.nome = palestra.nome;
     existingPalestra.descricao = palestra.descricao;
+    existingPalestra.horario = palestra.horario;
     return this.repository.save(existingPalestra);
   }
 

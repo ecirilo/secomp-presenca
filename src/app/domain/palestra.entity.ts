@@ -12,6 +12,9 @@ export class Palestra {
   @Column()
   descricao: string;
 
-  @OneToMany(() => Presenca, (presenca) => presenca.palestra)
+  @Column({ type: 'timestamp' })
+  horario: Date;
+
+  @OneToMany(() => Presenca, (presenca: Presenca) => presenca.palestra)
   presencas: Presenca[];
 }

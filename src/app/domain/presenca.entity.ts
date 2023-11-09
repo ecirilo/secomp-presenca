@@ -7,13 +7,13 @@ export class Presenca {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ManyToOne(() => Aluno, (aluno) => aluno.presencas, {
+  @ManyToOne(() => Aluno, (aluno: Aluno) => aluno.presencas, {
     eager: true,
   })
   @JoinColumn({ name: 'aluno_id' })
   aluno: Aluno;
 
-  @ManyToOne(() => Palestra, (palestra) => palestra.presencas)
+  @ManyToOne(() => Palestra, (palestra: Palestra) => palestra.presencas)
   @JoinColumn({ name: 'palestra_id' })
   palestra: Palestra;
 }

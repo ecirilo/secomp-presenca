@@ -1,4 +1,4 @@
-import {Column, Entity, OneToMany, PrimaryGeneratedColumn} from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { Presenca } from './presenca.entity';
 
 @Entity('aluno')
@@ -12,6 +12,6 @@ export class Aluno {
   @Column()
   matricula: string;
 
-  @OneToMany(() => Presenca, (presenca) => presenca.aluno)
+  @OneToMany(() => Presenca, (presenca: Presenca) => presenca.aluno)
   presencas: Presenca[];
 }
