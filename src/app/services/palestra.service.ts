@@ -1,6 +1,7 @@
-import {Inject, Injectable} from '@nestjs/common';
+import {Inject, Injectable, UseGuards} from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { Palestra } from '../domain/palestra.entity';
+import {AuthGuard} from "@nestjs/passport";
 
 @Injectable()
 export class PalestraService {

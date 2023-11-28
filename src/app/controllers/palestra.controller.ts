@@ -6,9 +6,11 @@ import {
   Param,
   Post,
   Put,
+  UseGuards,
 } from '@nestjs/common';
 import { PalestraService } from '../services/palestra.service';
 import { Palestra } from '../domain/palestra.entity';
+import { AuthGuard } from '@nestjs/passport';
 
 @Controller('/palestras')
 export class PalestraController {
